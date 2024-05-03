@@ -1,0 +1,809 @@
+@import "./responsive";
+@import "./sidenav";
+
+/*
+******************************************
+VARIABLES
+******************************************
+*/
+:root {
+    --primary-color: #0e2137;
+    --primary-hover-color: #1c3c61;
+    --secondary-color: #370e14;
+    --secondary-hover-color: #641b26;
+    --sidenav-bg-color: transparent;
+    ;
+    --quest-text-family: "Clicker Script", cursive;
+    --quest-text-button: "Montserrat Alternates", sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.fade-in {
+    transition: opacity 0.5s ease !important;
+}
+
+.green-text {
+    color: green;
+    font-size: 2em;
+}
+
+.flex-vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-vertical-center-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+}
+
+// BUTTONS 
+.hidden-btn-center-reusable,
+.custom-link-blue {
+    color: wheat !important;
+    background-color: var(--primary-color) !important;
+
+    &:hover {
+        background-color: var(--primary-hover-color) !important;
+    }
+}
+
+.hidden-btn-center-reusable-red,
+.custom-link-red {
+    color: wheat !important;
+    background-color: var(--secondary-color) !important;
+
+    &:hover {
+        background-color: var(--secondary-hover-color) !important;
+    }
+}
+
+.custom-link-red,
+.custom-link-blue {
+    text-decoration: none;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.custom-quest1-btn,
+.custom-quest1-btn-gold {
+    color: white !important;
+    font-weight: 700;
+    font-family: var(--quest-text-button);
+    text-decoration: none;
+    padding: 1%;
+    border-radius: 10px !important;
+    transition: ease .5s;
+    padding: 6px;
+}
+
+.custom-quest1-btn {
+    border: 3px solid #4049459e;
+    background-color: #67746e9e !important;
+
+    &:hover {
+        background-color: #98aca39e !important;
+        transition: ease .5s;
+    }
+}
+
+.custom-quest1-btn-gold {
+    background-color: #d0ae8cbf;
+    border: 3px solid #713906;
+
+    &:hover {
+        background-color: #e4ceabb5 !important;
+        transition: ease .5s;
+    }
+}
+
+.custom-white-btn {
+    color: white !important;
+}
+
+// Animated text container
+.animated-text-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    font-family: "Clicker Script", cursive !important;
+    font-weight: 400;
+}
+
+.animated-text {
+    color: white;
+}
+
+.close-animated-text-btn {
+    opacity: 0;
+}
+
+// NIVEAU 2
+.level2 {
+    background-image: url('/images/level2-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: ease 1s !important;
+}
+
+.level2-title {
+    transition: ease 1s !important;
+    position: absolute !important;
+    color: white !important;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.level2-bg-visible {
+    filter: grayscale(0%);
+    transition: ease 1s !important;
+}
+
+.hidden-btn-center {
+    color: wheat !important;
+    background-color: #be6a18 !important;
+}
+
+// NIVEAU 3
+.level3 {
+    height: 100vh;
+    background-image: url('/images/level3-bg.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f9f1d0;
+    transition: ease 1s !important;
+}
+
+.hidden-btn-center-3 {
+    color: wheat !important;
+    background-color: var(--secondary-color) !important;
+
+    &:hover {
+        background-color: var(--secondary-hover-color) !important;
+    }
+}
+
+.big-time {
+    font-family: "Big Shoulders Stencil Text", sans-serif;
+    font-size: 6.4rem !important;
+    padding: 0;
+
+    @include lg {
+        font-size: 2.6em !important;
+    }
+
+    @include md {
+        font-size: 2.2rem !important;
+    }
+
+    @include sm {
+        font-size: 1.2rem !important;
+    }
+
+    @include xs {
+        font-size: .51rem !important;
+    }
+}
+
+.big-time-no-margin {
+    margin: 0 !important;
+}
+
+// NIVEAU 4
+.level4 {
+    background-image: url('/images/level4-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffeab0;
+    transition: ease 1s !important;
+}
+
+// NIVEAU 5
+.level5-loading {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.level5-loaded {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.level5 {
+    position: relative;
+    height: 100vh;
+    background-image: url('/images/level5-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #feedcf;
+    transition: ease 1s !important;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+#clickable-canvas {
+    position: absolute;
+    /* Positionne le canvas par rapport à son conteneur */
+    top: 17%;
+    left: 65%;
+    z-index: 1;
+    /* Assure que le canvas est au-dessus des autres éléments */
+    cursor: pointer;
+    /* Affiche un curseur de pointeur lorsque survolé */
+}
+
+.hidden-icon {
+    display: none;
+}
+
+#off-switch {
+    margin: 36px auto;
+    padding: 8px 16px;
+    width: fit-content;
+    border: 0;
+    background: #fff;
+    font-family: "IBM Plex Sans";
+    color: #000;
+    cursor: pointer;
+}
+
+/* Spotlight styles */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes enter {
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes exit {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    98% {
+        transform: scale(3);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.spotlight {
+    position: fixed;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #000000ee;
+    pointer-events: none;
+}
+
+.word {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.word.visible {
+    opacity: 1;
+}
+
+// Level 6 
+.intro-level6,
+.level6-form {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.intro-level6 {
+    background-color: black;
+}
+
+.level6-form {
+    background-color: white;
+}
+
+.end-level6 {
+    background-image: url('/images/level6-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// Level 8
+.black-bg {
+    height: 100vh;
+    background-color: black;
+}
+
+.rain-container {
+    opacity: 0;
+    background-color: transparent;
+    background-image: url('/images/level8-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: opacity 9s ease;
+}
+
+.rain-container-fade-in {
+    opacity: 1;
+}
+
+.rain {
+    position: absolute;
+    width: 1px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.76);
+    animation: fall .2s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+.level8-intro-title {
+    font-size: 5rem;
+    color: white;
+    font-family: var(--quest-text-family) !important;
+    font-weight: 100;
+}
+
+// Menu
+.menu {
+    background-color: #00020f;
+}
+
+.menu-intro {
+    background-color: #00020f;
+    height: 100vh;
+}
+
+.menu-gameboard {
+    background-image: url('/images/menu-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.menu-gameboard-end {
+    background-image: url('/images/level8-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.user-quest-results-menu {
+    position: absolute;
+    right: 80px;
+    background-color: transparent;
+    color: #a2a2a2;
+    font-family: var(--quest-text-family);
+    font-size: 2em;
+}
+
+.quest-summary-container {
+    height: 100vh;
+    width: calc(100% - 600px);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quest-summary-text {
+    background-color: rgba(0, 0, 0, 0.541);
+    padding: 5%;
+    color: white;
+    font-size: 1.8em;
+    font-family: var(--quest-text-family) !important;
+}
+
+// Quêtes
+.quest-title {
+    font-size: 3em !important;
+}
+
+.quest-white-title {
+    font-family: var(--quest-text-family) !important;
+    font-size: 3em !important;
+    color: white;
+}
+
+// Quest 1
+.quest1-lv1 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--quest-text-family);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.keys-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.icon-wrapper {
+    height: 50px !important;
+}
+
+.quest1-lvl3-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/images/choices-doors.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f6e2bd;
+    display: flex;
+    justify-content: center;
+}
+
+.doors-link-container {
+    margin-top: 600px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+
+    @include xl {
+        width: 50%;
+    }
+
+    @include lg {
+        width: 60%;
+    }
+
+    @include md {
+        width: 60%
+    }
+
+    @include sm {
+        width: 70%;
+    }
+}
+
+.quest1-savior,
+.quest-container-savior,
+.quest-container-murderer,
+.quest1-rich {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.quest1-savior {
+    background-image: url('/images/quest1-creature.jpg');
+}
+
+.quest1-rich {
+    background-image: url('/images/quest1-bank.jpg');
+}
+
+.quest1-keypad-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.quest1-rich-keypad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.quest1-rich-keypadScreen {
+    background-color: #35586adc;
+    ;
+    color: white;
+    font-size: 2em;
+    height: 41px;
+    width: 200px;
+    text-align: center;
+    border: 3px solid #1d1d3d;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.keypad-btn {
+    width: 70px !important;
+    height: 70px !important;
+    padding: 15px !important;
+    background-color: #c18858d4 !important;
+    border: 3px solid #471414 !important;
+    border-radius: 100% !important;
+    margin: 6px !important;
+}
+
+#rich-keypad-btn {
+    background-color: #c18858d4 !important;
+    border: 3px solid #471414 !important;
+}
+
+.rain-coin {
+    position: absolute;
+    width: 1px;
+    height: 80px;
+    background: rgba(216, 155, 23, 0.76);
+    animation: fall .2s linear infinite;
+    border-radius: 100%;
+    cursor: grab;
+    padding: 3px;
+}
+
+.outro-rich {
+    background-image: url('/images/quest1-bank-outro.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.immortal-creature-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.immortal-creature-container {
+    background-image: url('/images/immortal-creature.png');
+}
+
+.quest2-cursor-box {
+    z-index: 6;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.quest2-cursor-area {
+    width: calc(100% - 80px);
+    height: calc(100vh - 80px);
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    place-items: center;
+    place-content: center;
+    cursor: grab;
+}
+
+.quest2-cursor-timeline {
+    width: 70%;
+    height: 5px;
+    background-color: black;
+    margin: auto;
+    position: absolute;
+    border-radius: 100%;
+}
+
+.quest2-cursor-timeline>span:first-child {
+    position: absolute;
+    left: -90px;
+    bottom: -17px;
+    font-size: 2em;
+    font-family: var(--quest-text-button);
+}
+
+.quest2-cursor-timeline>span:last-child {
+    position: absolute;
+    right: -100px;
+    bottom: -17px;
+    font-size: 2em;
+    font-family: var(--quest-text-button);
+}
+
+.quest2-cursor-timeline::before,
+.quest2-cursor-timeline::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.quest2-cursor-timeline::before {
+    left: -15px;
+}
+
+.quest2-cursor-timeline::after {
+    right: -15px;
+}
+
+.tempus-cloud-circle {
+    background-image: url('/images/tempus-circle.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#cloud-circle-title {
+    font-family: var(--quest-text-family) !important;
+}
+
+.quest3-intro {
+    background-image: url('/images/quest3-creature.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    @include xl {
+        background-size: contain;
+    }
+}
+
+.intro3-text-container {
+    @include xl {
+        margin-left: 100px;
+    }
+}
+
+.affectus-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.affectus-text-container {
+    font-size: 3em;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.quest4-memory {
+    background-image: url('/images/quest4-haunted.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.quest4-reorder-ul {
+    width: 500px;
+    margin-left: 20px;
+    position: static !important;
+}
+
+.quest4-reorder-li {
+    font-size: 1.5em;
+    font-family: var(--quest-text-button);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px 18px;
+    background: #efd9b6b5;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.quest4-discoveries {
+    background-image: url('/images/quest4-castle-door.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.quest4-outro {
+    background-image: url('/images/quest4-duck.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.quest5-hospital {
+    background-image: url('/images/quest5-hospital.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+//pendu
+.figure-container {
+    stroke: black;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    fill: transparent;
+}
+
+.figure-part {
+    display: block;
+}
