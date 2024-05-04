@@ -6,10 +6,11 @@ import QuestsSummary from "./QuestsSummary";
 import UserQuestResult from "./Quests/UserQuestResult";
 
 const Menu = () => {
-	const { checkQuestCompleted, initializeSession } = QuestSession();
+	const { checkQuestCompleted, initializeSession, completeQuest } = QuestSession();
 	const [selectedQuest, setSelectedQuest]          = useState(null);
 	const [isOpen, setIsOpen]                        = useState(false);
 	const isQuestComplete                            = checkQuestCompleted(4);
+	const isGameOver                                 = checkQuestCompleted(5);
 
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedQuest(menuItem);
@@ -33,7 +34,7 @@ const Menu = () => {
 				</Slide>
 				{isOpen ? (
 					<Fade in={true} timeout={1200}>
-						<div className={isQuestComplete ? 'menu-gameboard-end' : 'menu-gameboard'}>
+						<div className={isGameOver ? 'menu-gameboard-absurdum' : (isQuestComplete ? 'menu-gameboard-end' : 'menu-gameboard')}>
 							<div className="user-quest-results-menu">
 								<UserQuestResult questSession={QuestSession} />
 							</div>
@@ -49,7 +50,7 @@ const Menu = () => {
 					</Fade>
 				) : (
 					<Fade in={true} timeout={1200}>
-						 <div className={isQuestComplete ? 'menu-gameboard-end' : 'menu-gameboard'}>
+						 <div className={isGameOver ? 'menu-gameboard-absurdum' : (isQuestComplete ? 'menu-gameboard-end' : 'menu-gameboard')}>
 							<div className="user-quest-results-menu">
 								<UserQuestResult questSession={QuestSession} />
 							</div>

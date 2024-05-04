@@ -32,6 +32,13 @@ import Quest5Doc from './Menu/Quests/Quest5/Quest5Doc';
 import Quest5Columba from './Menu/Quests/Quest5/Quest5Columba';
 import Quest5Hospital from './Menu/Quests/Quest5/Quest5Hospital';
 import Quest5Pendu from './Menu/Quests/Quest5/Quest5Pendu';
+import Quest6Aliens from './Menu/Quests/Quest6/Quest6Aliens';
+import Quest6Micro from './Menu/Quests/Quest6/Quest6Micro';
+import Quest6Timer from './Menu/Quests/Quest6/Quest6Timer';
+import Quest6Flashback from './Menu/Quests/Quest6/Quest6Flashback';
+import Quest6Palindrome from './Menu/Quests/Quest6/Quest6Palindrome';
+import Quest6Phobia from './Menu/Quests/Quest6/Quest6Phobia';
+import Quest6Final from './Menu/Quests/Quest6/Quest6Final';
 
 const GameContainer = () => {
     return (
@@ -65,10 +72,17 @@ const GameContainer = () => {
                 <Route path = '/monstrum/memory' element      = {<Quest4Memory />} />
                 <Route path = '/monstrum/discoveries' element = {<Quest4Discoveries />} />
                 <Route path = '/monstrum/duck' element        = {<Quest4Outro />} />
-                <Route path = '/morbus/pendu' element      = {<Quest5Pendu />} />
+                <Route path = '/morbus/pendu' element         = {<Quest5Pendu />} />
                 <Route path = '/morbus/hospital' element      = {<Quest5Hospital />} />
                 <Route path = '/morbus/doc' element           = {<Quest5Doc />} />
                 <Route path = '/morbus/columba' element       = {<Quest5Columba />} />
+                <Route path = '/absurdum/aliens' element      = {<Quest6Aliens />} />
+                <Route path = '/absurdum/micro' element       = {<Quest6Micro />} />
+                <Route path = '/absurdum/timer' element       = {<Quest6Timer />} />
+                <Route path = '/absurdum/flashback' element   = {<Quest6Flashback />} />
+                <Route path = '/absurdum/palindrome' element  = {<Quest6Palindrome />} />
+                <Route path = '/absurdum/phobia' element      = {<Quest6Phobia />} />
+                <Route path = '/absurdum/final' element       = {<Quest6Final />} />
             </Routes>
         </>
     );

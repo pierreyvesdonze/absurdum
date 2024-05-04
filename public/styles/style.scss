@@ -12,7 +12,6 @@ VARIABLES
     --secondary-color: #370e14;
     --secondary-hover-color: #641b26;
     --sidenav-bg-color: transparent;
-    ;
     --quest-text-family: "Clicker Script", cursive;
     --quest-text-button: "Montserrat Alternates", sans-serif;
 }
@@ -442,7 +441,15 @@ body {
 }
 
 .menu-gameboard-end {
-    background-image: url('/images/level8-bg.jpg');
+    background-image: url('/images/menu-end-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.menu-gameboard-absurdum {
+    background-image: url('/images/menu-absurdum-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -725,7 +732,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
+
     @include xl {
         background-size: contain;
     }
@@ -806,4 +813,50 @@ body {
 
 .figure-part {
     display: block;
+}
+
+.quest6-aliens {
+    background-image: url('/images/quest6-xenomorphe.jpg');
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.quest6-reorder-ul {
+    width: 160px;
+    position: static !important;
+}
+
+.quest6-reorder-li {
+    font-size: 1.5em;
+    font-family: var(--quest-text-button);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px 18px;
+    background: #782746;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+.quest6-micro {
+    background-image: url('/images/quest6-micro.jpg');
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.quest6-timer {
+    background-image: url('/images/quest6-cloud-circle.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.quest6-palindrome {
+    background-image: url('/images/quest6-cloud-circle-2.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: var(--quest-text-family);
 }

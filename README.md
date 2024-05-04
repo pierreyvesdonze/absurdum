@@ -1,1 +1,5 @@
-## Quete finale absurdum ?
+# ABSURDUM
+
+## Jeu absurde
+
+### 42

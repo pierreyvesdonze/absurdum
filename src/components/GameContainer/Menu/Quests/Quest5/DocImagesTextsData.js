@@ -1,5 +1,5 @@
 const DocImagesTextsData = () => {
-    const imgDoc = process.env.PUBLIC_URL + '/images/quest5-doc.jpg';
+    const imgDoc      = process.env.PUBLIC_URL + '/images/quest5-doc.jpg';
     const imgSubject1 = process.env.PUBLIC_URL + '/images/quest5-doc-subject1.jpg';
     const imgSubject2 = process.env.PUBLIC_URL + '/images/quest5-doc-subject2.jpg';
     const imgSubject3 = process.env.PUBLIC_URL + '/images/quest5-doc-subject3.jpg';

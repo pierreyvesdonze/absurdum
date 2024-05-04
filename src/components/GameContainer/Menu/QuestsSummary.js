@@ -26,8 +26,8 @@ const QuestsSummary = ({ questId, isVisible, checkQuestCompleted }) => {
             link: "/morbus/pendu"
         },
         5: {
-            text: "Retour au menu principal",
-            link: "/"
+            text: "Absurdum",
+            link: "/absurdum/aliens"
         }
     };
 
@@ -44,7 +44,6 @@ const QuestsSummary = ({ questId, isVisible, checkQuestCompleted }) => {
                     transition={{ duration: 0.8 }}
                     className="quest-summary-container"
                 >
-
                     <div className="quest-summary-text">{text}</div>
                     {(questId === 0 || (questId > 0 && checkQuestCompleted(questId - 1))) && (
                         <Link to={link} className="custom-link-blue">Jouer</Link>

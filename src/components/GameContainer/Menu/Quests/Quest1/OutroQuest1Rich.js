@@ -14,7 +14,7 @@ const OutroQuest1Rich = () => {
         "",
         "Avec ta détermination, ton sens de l'analyse et ta soif de pouvoir",
         "Avec tes " + basket + " pièces... tu as bâti un empire",
-        "Une richesse dont toute une communauté profite et s'enfichit",
+        "Une richesse dont toute une communauté profite et s'enrichit",
         "Grâce à toi, le bonheur se reflète dans les éclats de l'or",
         "Mais ce bonheur va t-il durer ?",
     ]

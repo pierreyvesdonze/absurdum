@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Quest2TimerItem from "./Quest2TimerItem";
+import Quest6TimerItem from "./Quest6TimerItem";
 import { useNavigate } from "react-router-dom";
 
-const Quest2Timer = () => {
-    const [seconds, setSeconds]   = useState(15);
+const Quest6Timer = () => {
+    const [seconds, setSeconds]   = useState(10);
     const [isActive, setIsActive] = useState(true);
     const [symbols, setSymbols]   = useState(["🗙", "🗙", "🗙", "🗙", "🗙", "🗙", "🗙", "🗙"]);
     const combination             = ["△", "☐", "◯", "🗙", "◯", "△", "△", "◯"];
@@ -51,14 +51,13 @@ const Quest2Timer = () => {
             setIsActive(false);
             if (!checkWin()) {
                 // Perdu
-                return navigate('/tempus/intro');
+                return navigate('/absurdum/aliens');
             }
         } else if (checkWin()) {
             setIsActive(false);
             // Gagné
-            return navigate('/tempus/cancel');
+            return navigate('/absurdum/flashback');
         }
-    
     })
 
     const renderSymbolsCombination = () => {
@@ -82,6 +81,7 @@ const Quest2Timer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
+            className="quest6-timer"
             style={{
                 width: "100%",
                 height: "100vh",
@@ -90,14 +90,14 @@ const Quest2Timer = () => {
                 flexDirection: 'column',
                 justifyContent: "space-evenly",
                 alignItems: "center",
-                backgroundColor: "black"
+                backgroundColor: "#89495e"
             }}
         >
-            <Quest2TimerItem seconds={seconds} />
-            <div style={{ color: "white", marginBottom: "20px" }}>
+            <Quest6TimerItem seconds={seconds} />
+            <div style={{ color: "pink", marginBottom: "20px" }}>
                 {renderSymbolsCombination()}
             </div>
-            <div style={{ marginBottom: "20px" }}>
+            <div style={{ marginBottom: "80px" }}>
                 {symbols.map((symbol, index) => (
                     <div
                         key={index}
@@ -110,7 +110,8 @@ const Quest2Timer = () => {
                             lineHeight: "40px",
                             marginRight: "10px",
                             cursor: "pointer",
-                            userSelect: 'none'
+                            userSelect: 'none',
+                            color: 'pink'
                         }}
                         onClick={() => handleClick(index)}
                     >
@@ -122,4 +123,4 @@ const Quest2Timer = () => {
     );
 };
 
-export default Quest2Timer;
+export default Quest6Timer;
