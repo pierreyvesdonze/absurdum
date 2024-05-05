@@ -3,6 +3,7 @@ import { AnimatePresence, motion, Reorder } from "framer-motion";
 import Quest4ReorderItem from './Quest4ReorderItem';
 import { Howl } from "howler";
 import { useNavigate } from "react-router-dom";
+import baseUrl from "../../../../../baseUrl";
 
 const initialItems = [
     "Théorie de l'évolution (Darwin)",
@@ -33,7 +34,7 @@ const Quest4Discoveries = () => {
         ];
 
         const unlockSound = new Howl({
-            src: [process.env.PUBLIC_URL + '/sons/unlock-door.mp3'],
+            src: [baseUrl + '/sons/unlock-door.mp3'],
             loop: false,
             volume: 1
         });

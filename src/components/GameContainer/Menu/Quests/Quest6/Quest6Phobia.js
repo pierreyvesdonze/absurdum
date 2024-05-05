@@ -3,13 +3,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Button, FormControl, Input } from "@mui/material";
 import { useForm } from 'react-hook-form';
+import baseUrl from "../../../../../baseUrl";
 
-const trypophobieImg = process.env.PUBLIC_URL + '/images/quest6-phobia-trypophobie.jpg';
-const carpophobieImg = process.env.PUBLIC_URL + '/images/quest6-phobia-carpophobie.jpg';
-const anatidaephobieImg = process.env.PUBLIC_URL + '/images/quest6-phobia-anatidaephobie.jpg';
-const alektorophobieImg = process.env.PUBLIC_URL + '/images/quest6-phobia-alektorophobie.jpg';
-const phobophobieImg = process.env.PUBLIC_URL + '/images/quest6-phobia-phobophobie.jpg';
-const chromophobieImg = process.env.PUBLIC_URL + '/images/quest6-phobia-chromophobie.jpg';
+const trypophobieImg    = baseUrl + '/images/quest6-phobia-trypophobie.jpg';
+const carpophobieImg    = baseUrl + '/images/quest6-phobia-carpophobie.jpg';
+const anatidaephobieImg = baseUrl + '/images/quest6-phobia-anatidaephobie.jpg';
+const alektorophobieImg = baseUrl + '/images/quest6-phobia-alektorophobie.jpg';
+const phobophobieImg    = baseUrl + '/images/quest6-phobia-phobophobie.jpg';
+const chromophobieImg   = baseUrl + '/images/quest6-phobia-chromophobie.jpg';
 
 const textsImgData = [
     {

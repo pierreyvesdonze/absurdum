@@ -1,8 +1,10 @@
+import baseUrl from "../../../../../baseUrl";
+
 const DocImagesTextsData = () => {
-    const imgDoc      = process.env.PUBLIC_URL + '/images/quest5-doc.jpg';
-    const imgSubject1 = process.env.PUBLIC_URL + '/images/quest5-doc-subject1.jpg';
-    const imgSubject2 = process.env.PUBLIC_URL + '/images/quest5-doc-subject2.jpg';
-    const imgSubject3 = process.env.PUBLIC_URL + '/images/quest5-doc-subject3.jpg';
+    const imgDoc      = baseUrl + '/images/quest5-doc.jpg';
+    const imgSubject1 = baseUrl + '/images/quest5-doc-subject1.jpg';
+    const imgSubject2 = baseUrl + '/images/quest5-doc-subject2.jpg';
+    const imgSubject3 = baseUrl + '/images/quest5-doc-subject3.jpg';
 
     const texts = [
         {

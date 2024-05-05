@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import baseUrl from "../../../../../baseUrl";
 
-const img1 = process.env.PUBLIC_URL + '/images/tempus-circle.jpg';
-const img2 = process.env.PUBLIC_URL + '/images/quest6-alien.jpg';
-const img3 = process.env.PUBLIC_URL + '/images/quest5-doc.jpg';
-const img4 = process.env.PUBLIC_URL + '/images/quest5-hospital.jpg';
-const img5 = process.env.PUBLIC_URL + '/images/quest5-columba.jpg';
+const img1 = baseUrl + '/images/tempus-circle.jpg';
+const img2 = baseUrl + '/images/quest6-alien.jpg';
+const img3 = baseUrl + '/images/quest5-doc.jpg';
+const img4 = baseUrl + '/images/quest5-hospital.jpg';
+const img5 = baseUrl + '/images/quest5-columba.jpg';
 
 const Quest6Flashback = () => {
     const navigate = useNavigate();

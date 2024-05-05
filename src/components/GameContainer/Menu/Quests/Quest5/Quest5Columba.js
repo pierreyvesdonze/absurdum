@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Button, FormControl, Input } from "@mui/material";
 import { useForm } from 'react-hook-form';
 import QuestSession from "../../../../QuestSession";
+import baseUrl from "../../../../../baseUrl";
 
 const Quest5Columba = () => {
-    const imgColumba = process.env.PUBLIC_URL + '/images/quest5-columba.jpg';
+    const imgColumba = baseUrl + '/images/quest5-columba.jpg';
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const navigate = useNavigate();
     const { completeQuest, setQuestResult } = QuestSession();

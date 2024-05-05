@@ -3,28 +3,29 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import QuestSession from "../../../../QuestSession";
+import baseUrl from "../../../../../baseUrl";
 
 const Quest3Affectus = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [showImage, setShowImage]             = useState(false);
-    const [empathyCount, setEmpathyCount]       = useState(0);
+    const [showImage, setShowImage] = useState(false);
+    const [empathyCount, setEmpathyCount] = useState(0);
     const [detachmentCount, setDetachmentCount] = useState(0);
-    const [customText, setCustomText]           = useState("");
-    const { completeQuest, setQuestResult }     = QuestSession();
-    const navigate                              = useNavigate();
+    const [customText, setCustomText] = useState("");
+    const { completeQuest, setQuestResult } = QuestSession();
+    const navigate = useNavigate();
 
-    const huntingImage  = process.env.PUBLIC_URL + '/images/quest3-hunting.jpg';
-    const moneyImage    = process.env.PUBLIC_URL + '/images/quest3-money.jpg';
-    const toyImage      = process.env.PUBLIC_URL + '/images/quest3-toy.jpg';
-    const hungryImage   = process.env.PUBLIC_URL + '/images/quest3-hungry.jpg';
-    const womanGunImage = process.env.PUBLIC_URL + '/images/quest3-woman-gun.jpg';
+    const huntingImage  = baseUrl + '/images/quest3-hunting.jpg';
+    const moneyImage    = baseUrl + '/images/quest3-money.jpg';
+    const toyImage      = baseUrl + '/images/quest3-toy.jpg';
+    const hungryImage   = baseUrl + '/images/quest3-hungry.jpg';
+    const womanGunImage = baseUrl + '/images/quest3-woman-gun.jpg';
 
     const questions = [
         {
             image: huntingImage,
             text: "Un chat chasse un oiseau",
             answers: ["Sauver l'oiseau", "Ne rien faire"],
-            answersText:["Le chat n'est plus", "Le chat n'est plus !"]
+            answersText: ["Le chat n'est plus", "Le chat n'est plus !"]
         },
         {
             image: moneyImage,
@@ -74,7 +75,7 @@ const Quest3Affectus = () => {
             } else {
                 setQuestResult(2, 'Detachmentum');
             }
-        
+
             // Vérifier que completeQuest est appelé
             completeQuest(2);
             navigate('/absurdum');
@@ -138,7 +139,7 @@ const Quest3Affectus = () => {
                             </>
                         )}
                         {showImage && (
-                          
+
                             <div>{customText}</div>
                         )}
                         {showImage && (

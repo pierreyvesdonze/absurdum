@@ -1,5 +1,5 @@
 # ABSURDUM
 
-## Jeu absurde
+## Jeu expérimental
 
 ### 42

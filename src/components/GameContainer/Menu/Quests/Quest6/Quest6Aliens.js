@@ -3,6 +3,7 @@ import { AnimatePresence, motion, Reorder } from "framer-motion";
 import Quest6AlienItem from './Quest6AlienItem';
 import { Howl } from "howler";
 import { useNavigate } from "react-router-dom";
+import baseUrl from "../../../../../baseUrl";
 
 const initialItems = [
     "Gremlin",
@@ -31,7 +32,7 @@ const Quest6Aliens = () => {
         ];
 
         const unlockSound = new Howl({
-            src: [process.env.PUBLIC_URL + '/sons/plouf.mp3'],
+            src: [baseUrl + '/sons/plouf.mp3'],
             loop: false,
             volume: 0.8
         });

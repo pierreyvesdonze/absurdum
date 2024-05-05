@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import baseUrl from "../../../../../baseUrl";
 
 const Quest4Memory = () => {
     const [cards, setCards]               = useState([]);  // État pour les cartes
@@ -8,18 +9,18 @@ const Quest4Memory = () => {
     const [pairsFound, setPairsFound]     = useState(0);   // État pour le nombre de paires trouvées
 
     const images = [
-        process.env.PUBLIC_URL + '/images/quest4-memory-1-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-2-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-3-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-4-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-5-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-6-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-7-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-8-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-9-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-10-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-11-small.jpg',
-        process.env.PUBLIC_URL + '/images/quest4-memory-12-small.jpg',
+        baseUrl + '/images/quest4-memory-1-small.jpg',
+        baseUrl + '/images/quest4-memory-2-small.jpg',
+        baseUrl + '/images/quest4-memory-3-small.jpg',
+        baseUrl + '/images/quest4-memory-4-small.jpg',
+        baseUrl + '/images/quest4-memory-5-small.jpg',
+        baseUrl + '/images/quest4-memory-6-small.jpg',
+        baseUrl + '/images/quest4-memory-7-small.jpg',
+        baseUrl + '/images/quest4-memory-8-small.jpg',
+        baseUrl + '/images/quest4-memory-9-small.jpg',
+        baseUrl + '/images/quest4-memory-10-small.jpg',
+        baseUrl + '/images/quest4-memory-11-small.jpg',
+        baseUrl + '/images/quest4-memory-12-small.jpg',
     ];
 
     // Fonction pour générer les cartes avec leurs valeurs
