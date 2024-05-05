@@ -15,7 +15,7 @@ export default function Quest2IntroCursor({ handleCursorCompletion }) {
 		{ name: "Picasso", birthdate: 1881 },
 		{ name: "Da Vinci", birthdate: 1452 },
 		{ name: "Einstein", birthdate: 1879 },
-		{ name: "Eiffeil", birthdate: 1932 }
+		{ name: "Eiffel", birthdate: 1832 }
 	];
 
 	// Fonction pour vérifier si les dates sont dans l'ordre chronologique
