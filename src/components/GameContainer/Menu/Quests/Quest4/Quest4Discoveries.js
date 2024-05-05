@@ -25,9 +25,9 @@ const Quest4Discoveries = () => {
         const chronologicalOrder = [
             "Circulation sanguine (Harvey)",
             "Loi de la gravitation universelle (Newton)",
-            "Électromagnétisme (Maxwell)",
-            "Théorie de l'évolution (Darwin)",
             "Conservation de l'énergie (Mayer)",
+            "Théorie de l'évolution (Darwin)",
+            "Électromagnétisme (Maxwell)",
             "Théorie des germes (Pasteur)",
             "Théorie de la relativité (Einstein)",
             "Structure de l'ADN (Crick)",
