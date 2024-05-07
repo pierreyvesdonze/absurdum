@@ -22,6 +22,10 @@ const QuestionForm = ({ onSubmit }) => {
         setInputValue(""); // Réinitialiser la valeur du champ de saisie
     };
 
+    const handleButtonClick = () => {
+        handleSubmit(handleFormSubmit)();
+    };
+
     return (
         <form onSubmit={handleFormSubmit} className='formControl'>
             <FormControl>
@@ -41,7 +45,8 @@ const QuestionForm = ({ onSubmit }) => {
                 variant="soft"
                 color="neutral"
                 sx={{ mt: 6 }}
-                type="submit"
+                type="button"
+                onClick={handleButtonClick}
             >
                 Valider
             </Button>
