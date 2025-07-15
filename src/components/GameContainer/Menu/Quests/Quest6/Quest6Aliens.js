@@ -3,7 +3,6 @@ import { AnimatePresence, motion, Reorder } from "framer-motion";
 import Quest6AlienItem from './Quest6AlienItem';
 import { Howl } from "howler";
 import { useNavigate } from "react-router-dom";
-import baseUrl from "../../../../../baseUrl";
 
 const initialItems = [
     "Gremlin",
@@ -19,7 +18,6 @@ const Quest6Aliens = () => {
     const [items, setItems] = useState(initialItems);
     const navigate = useNavigate();
 
-    // Effet pour vérifier l'ordre des découvertes
     useEffect(() => {
         const chronologicalOrder = [
             "Alien",
@@ -32,7 +30,7 @@ const Quest6Aliens = () => {
         ];
 
         const unlockSound = new Howl({
-            src: [baseUrl + '/sons/plouf.mp3'],
+            src: [`${process.env.PUBLIC_URL}/sons/plouf.mp3`],
             loop: false,
             volume: 0.8
         });
@@ -44,7 +42,7 @@ const Quest6Aliens = () => {
                 navigate('/absurdum/micro');
             }, 1200);
         }
-    }, [items]);
+    }, [items, navigate]);
 
     return (
         <AnimatePresence>

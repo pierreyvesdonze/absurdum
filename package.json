@@ -1,6 +1,6 @@
 {
   "name": "absurdum",
-  "homepage": ".",
+  "homepage": "https://pierreyvesdonze.github.io/absurdum",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.30.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.89.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -29,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -r https://github.com/pierreyvesdonze/absurdum.git"
+    "deploy": "gh-pages -d build -r git@github.com:pierreyvesdonze/absurdum.git"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

@@ -6,10 +6,10 @@ import { Button } from "@mui/material";
 import QuestSession from "../../../../QuestSession";
 
 const Quest1Immortal = () => {
-    const texts                                   = TextsComponent();
+    const texts = TextsComponent();
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
-    const [showButton, setShowButton]             = useState(false);
-    const { completeQuest, setQuestResult }       = QuestSession();
+    const [showButton, setShowButton] = useState(false);
+    const { completeQuest, setQuestResult } = QuestSession();
 
     // On set la quête terminée + le status du joueur
     completeQuest(0);
@@ -34,9 +34,9 @@ const Quest1Immortal = () => {
     // On set à -1 pour éviter le démontage du composant avant la redirection
     useEffect(() => {
         if (currentTextIndex === texts.length - 1) {
-            return window.location.href = "/absurdum";
+            window.location.href = "/absurdum#/absurdum";
         }
-    }, [window.location.hfref, currentTextIndex])
+    }, [currentTextIndex, texts.length]);
 
     return (
         <AnimatePresence>

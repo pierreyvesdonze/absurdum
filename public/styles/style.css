@@ -231,7 +231,7 @@ body {
 }
 
 .level2 {
-  background-image: url("/images/level2-bg.jpg");
+  background-image: url("/absurdum/images/level2-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   filter: grayscale(100%);
@@ -260,7 +260,7 @@ body {
 
 .level3 {
   height: 100vh;
-  background-image: url("/images/level3-bg.jpg");
+  background-image: url("/absurdum/images/level3-bg.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -307,7 +307,7 @@ body {
 }
 
 .level4 {
-  background-image: url("/images/level4-bg.jpg");
+  background-image: url("/absurdum/images/level4-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ffeab0;
@@ -328,7 +328,7 @@ body {
 .level5 {
   position: relative;
   height: 100vh;
-  background-image: url("/images/level5-bg.jpg");
+  background-image: url("/absurdum/images/level5-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -444,7 +444,7 @@ body {
 }
 
 .end-level6 {
-  background-image: url("/images/level6-bg.jpg");
+  background-image: url("/absurdum//images/level6-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-color: black;
@@ -463,7 +463,7 @@ body {
 .rain-container {
   opacity: 0;
   background-color: transparent;
-  background-image: url("/images/level8-bg.jpg");
+  background-image: url("/absurdum/images/level8-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -512,7 +512,7 @@ body {
 }
 
 .menu-gameboard {
-  background-image: url("/images/menu-bg.jpg");
+  background-image: url("/absurdum/images/menu-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -520,7 +520,7 @@ body {
 }
 
 .menu-gameboard-end {
-  background-image: url("/images/menu-end-bg.jpg");
+  background-image: url("/absurdum/images/menu-end-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -528,7 +528,7 @@ body {
 }
 
 .menu-gameboard-absurdum {
-  background-image: url("/images/menu-absurdum-bg.jpg");
+  background-image: url("/absurdum/images/menu-absurdum-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -600,7 +600,7 @@ body {
 .quest1-lvl3-container {
   width: 100%;
   height: 100vh;
-  background-image: url("/images/choices-doors.jpg");
+  background-image: url("/absurdum/images/choices-doors.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -652,11 +652,11 @@ body {
 }
 
 .quest1-savior {
-  background-image: url("/images/quest1-creature.jpg");
+  background-image: url("/absurdum/images/quest1-creature.jpg");
 }
 
 .quest1-rich {
-  background-image: url("/images/quest1-bank.jpg");
+  background-image: url("/absurdum/images/quest1-bank.jpg");
 }
 
 .quest1-keypad-container {
@@ -711,7 +711,7 @@ body {
 }
 
 .outro-rich {
-  background-image: url("/images/quest1-bank-outro.jpg");
+  background-image: url("/absurdum/images/quest1-bank-outro.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -724,7 +724,7 @@ body {
 }
 
 .immortal-creature-container {
-  background-image: url("/images/immortal-creature.png");
+  background-image: url("/absurdum/images/immortal-creature.png");
 }
 
 .quest2-cursor-box {
@@ -796,7 +796,7 @@ body {
 }
 
 .tempus-cloud-circle {
-  background-image: url("/images/tempus-circle.jpg");
+  background-image: url("/absurdum/images/tempus-circle.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -807,7 +807,7 @@ body {
 }
 
 .quest3-intro {
-  background-image: url("/images/quest3-creature.jpg");
+  background-image: url("/absurdum/images/quest3-creature.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -838,7 +838,7 @@ body {
 }
 
 .quest4-memory {
-  background-image: url("/images/quest4-haunted.jpg");
+  background-image: url("/absurdum/images/quest4-haunted.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -863,21 +863,21 @@ body {
 }
 
 .quest4-discoveries {
-  background-image: url("/images/quest4-castle-door.jpg");
+  background-image: url("/absurdum/images/quest4-castle-door.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .quest4-outro {
-  background-image: url("/images/quest4-duck.jpg");
+  background-image: url("/absurdum/images/quest4-duck.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .quest5-hospital {
-  background-image: url("/images/quest5-hospital.jpg");
+  background-image: url("/absurdum/images/quest5-hospital.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -895,7 +895,7 @@ body {
 }
 
 .quest6-aliens {
-  background-image: url("/images/quest6-xenomorphe.jpg");
+  background-image: url("/absurdum/images/quest6-xenomorphe.jpg");
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -919,21 +919,21 @@ body {
 }
 
 .quest6-micro {
-  background-image: url("/images/quest6-micro.jpg");
+  background-image: url("/absurdum/images/quest6-micro.jpg");
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
 }
 
 .quest6-timer {
-  background-image: url("/images/quest6-cloud-circle.jpg");
+  background-image: url("/absurdum/images/quest6-cloud-circle.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .quest6-palindrome {
-  background-image: url("/images/quest6-cloud-circle-2.jpg");
+  background-image: url("/absurdum/images/quest6-cloud-circle-2.jpg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

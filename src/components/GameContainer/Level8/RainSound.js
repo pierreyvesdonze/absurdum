@@ -4,22 +4,24 @@ import { Howl } from "howler";
 const RainSound = () => {
   useEffect(() => {
     const sound = new Howl({
-      src: ["../../../sons/rain.mp3"],
+      src: [`${process.env.PUBLIC_URL}/sons/rain.mp3`],
       loop: true,
       volume: 0, // Volume initial à 0 pour commencer le fondu
     });
 
     const fadeInSound = () => {
       const fadeInInterval = setInterval(() => {
-        sound.volume(sound.volume() + 0.05);
-        if (sound.volume() >= 1) {
+        const currentVolume = sound.volume();
+        const newVolume = Math.min(currentVolume + 0.05, 1);
+        sound.volume(newVolume);
+        if (newVolume >= 1) {
           clearInterval(fadeInInterval);
         }
-      }, 100); // Intervalle de temps entre chaque incrément en millisecondes
+      }, 100);
     };
 
-    fadeInSound();
     sound.play();
+    fadeInSound();
 
     return () => {
       sound.stop();
@@ -28,6 +30,6 @@ const RainSound = () => {
   }, []);
 
   return null;
-}
+};
 
 export default RainSound;

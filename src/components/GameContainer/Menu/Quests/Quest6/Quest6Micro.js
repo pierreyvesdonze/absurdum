@@ -3,7 +3,6 @@ import { AnimatePresence, motion, Reorder } from "framer-motion";
 import Quest6AlienItem from './Quest6AlienItem';
 import { Howl } from "howler";
 import { useNavigate } from "react-router-dom";
-import baseUrl from "../../../../../baseUrl";
 
 const initialItems = [
     "Organisme",
@@ -19,7 +18,6 @@ const Quest6Micro = () => {
     const [items, setItems] = useState(initialItems);
     const navigate = useNavigate();
 
-    // Effet pour vérifier l'ordre des découvertes
     useEffect(() => {
         const chronologicalOrder = [
             "Quark",
@@ -32,7 +30,7 @@ const Quest6Micro = () => {
         ];
 
         const unlockSound = new Howl({
-            src: [baseUrl + '/sons/glitch.mp3'],
+            src: [`${process.env.PUBLIC_URL}/sons/glitch.mp3`],
             loop: false,
             volume: 0.5
         });
@@ -44,7 +42,7 @@ const Quest6Micro = () => {
                 navigate('/absurdum/timer');
             }, 1000);
         }
-    }, [items]);
+    }, [items, navigate]);
 
     return (
         <AnimatePresence>
@@ -54,7 +52,13 @@ const Quest6Micro = () => {
                 exit={{ opacity: 0, transition: { duration: 1 } }}
                 transition={{ duration: 1 }}
                 className="quest6-micro"
-                style={{ height: '100vh', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                style={{
+                    height: '100vh',
+                    backgroundColor: 'black',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
             >
                 <div style={{ width: '60%' }}></div>
                 <div style={{

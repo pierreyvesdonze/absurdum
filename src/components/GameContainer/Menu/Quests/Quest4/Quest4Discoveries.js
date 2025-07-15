@@ -3,7 +3,6 @@ import { AnimatePresence, motion, Reorder } from "framer-motion";
 import Quest4ReorderItem from './Quest4ReorderItem';
 import { Howl } from "howler";
 import { useNavigate } from "react-router-dom";
-import baseUrl from "../../../../../baseUrl";
 
 const initialItems = [
     "Théorie de l'évolution (Darwin)",
@@ -20,7 +19,6 @@ const Quest4Discoveries = () => {
     const [items, setItems] = useState(initialItems);
     const navigate = useNavigate();
 
-    // Effet pour vérifier l'ordre des découvertes
     useEffect(() => {
         const chronologicalOrder = [
             "Circulation sanguine (Harvey)",
@@ -34,7 +32,7 @@ const Quest4Discoveries = () => {
         ];
 
         const unlockSound = new Howl({
-            src: [baseUrl + '/sons/unlock-door.mp3'],
+            src: [`${process.env.PUBLIC_URL}/sons/unlock-door.mp3`],
             loop: false,
             volume: 1
         });
@@ -46,7 +44,7 @@ const Quest4Discoveries = () => {
                 navigate('/monstrum/duck');
             }, 1000);
         }
-    }, [items]);
+    }, [items, navigate]);
 
     return (
         <AnimatePresence>
@@ -56,7 +54,13 @@ const Quest4Discoveries = () => {
                 exit={{ opacity: 0, transition: { duration: 1 } }}
                 transition={{ duration: 1 }}
                 className="quest4-discoveries"
-                style={{ height: '100vh', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                style={{
+                    height: '100vh',
+                    backgroundColor: 'black',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
             >
                 <Reorder.Group axis='y' onReorder={setItems} values={items} className="quest4-reorder-ul">
                     {items.map((item) => (
