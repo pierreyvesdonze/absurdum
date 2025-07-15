@@ -1,11 +1,11 @@
 let baseUrl;
 
 if (process.env.NODE_ENV === 'development') {
-    // Environnement de développement
-    baseUrl = process.env.PUBLIC_URL;
+    // Environnement de développement : React sert les fichiers depuis la racine
+    baseUrl = process.env.PUBLIC_URL || '';
 } else {
-    // Environnement de production
-    baseUrl = "https://absurdum.pydonze.fr";
+    // Environnement de production sur GitHub Pages
+    baseUrl = "https://pierreyvesdonze.github.io/absurdum";
 }
 
 export default baseUrl;
