@@ -6,7 +6,7 @@ export default function Quest2IntroCursor({ handleCursorCompletion }) {
 	const constraintsRef = React.useRef(null);
 	const dragControls = useDragControls();
 
-	//Davinci, Galilée, Newton, Mozart, Ghandi, Einstein, Picasso, Eiffel
+	//Davinci, Galilée, Newton, Mozart, Eiffel, Ghandi, Einstein, Picasso
 	const names = [
 		{ name: "Newton", birthdate: 1643 },
 		{ name: "Gandhi", birthdate: 1869 },
@@ -14,8 +14,8 @@ export default function Quest2IntroCursor({ handleCursorCompletion }) {
 		{ name: "Galilée", birthdate: 1564 },
 		{ name: "Picasso", birthdate: 1881 },
 		{ name: "Da Vinci", birthdate: 1452 },
+		{ name: "Eiffel", birthdate: 1832 },
 		{ name: "Einstein", birthdate: 1879 },
-		{ name: "Eiffel", birthdate: 1832 }
 	];
 
 	// Fonction pour vérifier si les dates sont dans l'ordre chronologique
