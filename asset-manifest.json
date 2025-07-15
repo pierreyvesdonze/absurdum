@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/absurdum/static/js/main.e0ab3c27.js",
+    "main.js": "/absurdum/static/js/main.1df86708.js",
     "static/media/creature-glitch.mp4": "/absurdum/static/media/creature-glitch.c5f86b00f9e812a95dac.mp4",
     "index.html": "/absurdum/index.html",
-    "main.e0ab3c27.js.map": "/absurdum/static/js/main.e0ab3c27.js.map"
+    "main.1df86708.js.map": "/absurdum/static/js/main.1df86708.js.map"
   },
   "entrypoints": [
-    "static/js/main.e0ab3c27.js"
+    "static/js/main.1df86708.js"
   ]
 }
